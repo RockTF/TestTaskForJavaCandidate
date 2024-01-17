@@ -3,12 +3,12 @@ spring:
     allow-bean-definition-overriding: true
   data:
     mongodb:
-      uri:
+      uri: mongodb
       database:
   datasource:
     username:
     password:
-    url: jdbc:://
+    url: jdbc
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 20
