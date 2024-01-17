@@ -16,23 +16,18 @@ public class UserEntity {
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(name = "id", nullable = false, updatable = false)
-    private final UUID userId;
+    private UUID userId;
 
     @Column(name = "username", nullable = false)
-    private final String username;
+    private String username;
 
     @Column(name = "name", nullable = false)
-    private final String name;
+    private String name;
 
     @Column(name = "surname", nullable = false)
-    private final String surname;
+    private String surname;
 
-    public UserEntity(UUID userId, String username, String name, String surname) {
-        this.userId = userId;
-        this.username = username;
-        this.name = name;
-        this.surname = surname;
-    }
+    public UserEntity() {}
 
     public UUID getUserId() {
         return userId;

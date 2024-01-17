@@ -1,6 +1,10 @@
 FROM openjdk:23-slim-bullseye
 
-VOLUME /tmp
+RUN apk update && apk upgrade --no-cache
+
 ARG JAR_FILE
+ENV PORT 8080
+EXPOSE 8080
 COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+WORKDIR /opt
+CMD ["java", "-jar", "app.jar"]

@@ -1,13 +1,32 @@
 spring:
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    mongodb:
+      uri:
+      database:
   datasource:
-    url: jdbc:postgresql://localhost:5432/pr_dev
-    username: .....
-    password: ...
+    username:
+    password:
+    url:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 20
+      auto-commit: false
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: none
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+        connection:
+          release_mode: after_transaction
+        temp:
+          use_jdbc_metadata_defaults: false
+  flyway:
+    enabled: true

@@ -1,9 +1,0 @@
-version: '3.8'
-services:
-  app:
-    build:
-      context: .
-      args:
-        APP_NAME: myapp
-    ports:
-      - "8080:8080"
