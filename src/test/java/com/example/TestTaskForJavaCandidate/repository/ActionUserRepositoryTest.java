@@ -4,6 +4,7 @@ import com.example.TestTaskForJavaCandidate.application.model.User;
 import com.example.TestTaskForJavaCandidate.repository.jpa.IActionUserMongoRepository;
 import com.example.TestTaskForJavaCandidate.repository.jpa.IActionUserPostgresRepository;
 import com.example.TestTaskForJavaCandidate.repository.jpa.entity.UserEntity;
+import com.example.TestTaskForJavaCandidate.repository.jpa.entity.UserMongo;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -34,7 +35,7 @@ public class ActionUserRepositoryTest {
     public void testGetAllUsers() {
         // given
         UserEntity postgresUser = new UserEntity(UUID.randomUUID(), "johndoe1", "John1", "Doe1");
-        UserEntity mongoUser = new UserEntity(UUID.randomUUID(), "johndoe2", "John2", "Doe2");
+        UserMongo mongoUser = new UserMongo(UUID.randomUUID(), "johndoe2", "John2", "Doe2");
 
         when(actionUserJpaRepository.findAll()).thenReturn(List.of(postgresUser));
         when(actionUserMongoRepository.findAll()).thenReturn(List.of(mongoUser));

@@ -27,6 +27,13 @@ public class UserEntity {
     @Column(name = "surname", nullable = false)
     private String surname;
 
+    public UserEntity(UUID userId, String username, String name, String surname) {
+        this.userId = userId;
+        this.username = username;
+        this.name = name;
+        this.surname = surname;
+    }
+
     public UserEntity() {}
 
     public UUID getUserId() {
